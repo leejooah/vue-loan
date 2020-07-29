@@ -1,7 +1,6 @@
 package com.leejua.myproject.loans;
 
 import com.querydsl.core.BooleanBuilder;
-import com.querydsl.core.QueryResults;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.JPQLQuery;
 

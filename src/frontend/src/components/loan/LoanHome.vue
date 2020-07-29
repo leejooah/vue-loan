@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
         <template #header>
-            <div id="header"></div>
+            <div id="header"><h1>대출 홈</h1></div>
         </template>
         <template #content>
             <div id="content">
@@ -65,10 +65,10 @@
 
 }
     #header {
-        background-color: #26A69A;
         width: 100%;
         height: 200px;
-
+        text-align: center;
+        padding-top: 100px;
     }
 
 

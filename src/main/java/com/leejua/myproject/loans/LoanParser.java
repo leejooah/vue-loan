@@ -25,8 +25,6 @@ try {
     JsonObject result = (JsonObject) object.get("result");
     JsonArray baseList = (JsonArray) result.get("baseList");
         JsonArray optionList = (JsonArray) result.get("optionList");
-    System.out.println(baseList.size());
-    System.out.println(optionList.size());
 for(int i=0; i<=baseList.size()-1; i++) {
     JsonObject baseElement = (JsonObject) baseList.get(i);
     LoanBase loanBase = new LoanBase();
@@ -41,7 +39,6 @@ for(int i=0; i<=baseList.size()-1; i++) {
     loanBase.setDclsStrtDay(baseElement.get("dcls_strt_day").toString());
     loanBase.setDclsEndDay(baseElement.get("dcls_end_day").toString());
     loanBase.setFinCoSubmDay(baseElement.get("fin_co_subm_day").toString());
-    System.out.println(i+"번째 baseList set 완료 ");
 loanBaseRepository.save(loanBase);
 }
 LoanOption loanOption = null;
@@ -61,7 +58,6 @@ LoanOption loanOption = null;
     loanOption.setCrdtGrad6(optionElement.get("crdt_grad_6").isJsonNull()?0 :Double.parseDouble(optionElement.get("crdt_grad_6").toString()));
     loanOption.setCrdtGrad10(optionElement.get("crdt_grad_10").isJsonNull()?0 : Double.parseDouble(optionElement.get("crdt_grad_10").toString()));
     loanOption.setCrdtGradAvg(Double.parseDouble(optionElement.get("crdt_grad_avg").toString()) );
-    System.out.println(i+"번째 optionList set완료");
     for (int j=1; j<=baseList.size();j++){
         if (loanOption.getFinCoNo().equals(loanBaseRepository.findById((long)j).get().getFinCoNo())
         && loanOption.getFinPrdtCd().equals(loanBaseRepository.findById((long)j).get().getFinPrdtCd())
